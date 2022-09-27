@@ -1,5 +1,5 @@
 package com.masai.entity;
 
-public class Transactions {
+public class Transaction {
 
 }
