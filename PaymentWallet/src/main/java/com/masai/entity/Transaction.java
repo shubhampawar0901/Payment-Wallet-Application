@@ -24,7 +24,6 @@ public class Transaction {
 
 	public Transaction() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
 	public Transaction(long transactionID, @NotNull String transactionType, @NotNull LocalDateTime localDateTime,
