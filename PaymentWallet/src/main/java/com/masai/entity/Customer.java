@@ -15,6 +15,7 @@ public class Customer {
 
 	@Id
 	@Size(min=10,max=10)
+	@Pattern(regexp="([A-Z]{5}[0-9]{4}[A-Z]{1})", message = "Please,enter valid pancard number")
 	private String pancard;
 	@NotNull
 	private String name;
