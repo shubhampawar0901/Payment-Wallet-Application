@@ -14,7 +14,7 @@ public class BankAccount {
 
 	@Id
 	@Size(min = 11, max = 16)
-	private int bankAccountNo ;
+	private Integer bankAccountNo ;
 	
 	@NotNull
 	@Pattern(regexp ="[A-Z]{4}0[A-Z0-9]{6}$")
@@ -25,21 +25,18 @@ public class BankAccount {
 	
 	@NotNull
 	@Min(0)
-	private double bankBallance;
+	private Double bankBallance;
 	
 	@ManyToOne(cascade = CascadeType.ALL)
 	private Wallet wallet;
 
 	public BankAccount() {
 		super();
-		// TODO Auto-generated constructor stub
 	}
 
-	
-
-	public BankAccount(@Size(min = 11, max = 16) int bankAccountNo,
+	public BankAccount(@Size(min = 11, max = 16) Integer bankAccountNo,
 			@NotNull @Pattern(regexp = "[A-Z]{4}0[A-Z0-9]{6}$") String iFSCcode, @NotNull String bankName,
-			@NotNull @Min(0) double bankBallance, Wallet wallet) {
+			@NotNull @Min(0) Double bankBallance, Wallet wallet) {
 		super();
 		this.bankAccountNo = bankAccountNo;
 		IFSCcode = iFSCcode;
@@ -48,11 +45,11 @@ public class BankAccount {
 		this.wallet = wallet;
 	}
 
-	public int getBankAccountNo() {
+	public Integer getBankAccountNo() {
 		return bankAccountNo;
 	}
 
-	public void setBankAccountNo(int bankAccountNo) {
+	public void setBankAccountNo(Integer bankAccountNo) {
 		this.bankAccountNo = bankAccountNo;
 	}
 
@@ -72,11 +69,11 @@ public class BankAccount {
 		this.bankName = bankName;
 	}
 
-	public double getBankBallance() {
+	public Double getBankBallance() {
 		return bankBallance;
 	}
 
-	public void setBankBallance(double bankBallance) {
+	public void setBankBallance(Double bankBallance) {
 		this.bankBallance = bankBallance;
 	}
 
@@ -93,6 +90,7 @@ public class BankAccount {
 		return "BankAccount [bankAccountNo=" + bankAccountNo + ", IFSCcode=" + IFSCcode + ", bankName=" + bankName
 				+ ", bankBallance=" + bankBallance + ", wallet=" + wallet + "]";
 	}
+
 	
 	
 }
