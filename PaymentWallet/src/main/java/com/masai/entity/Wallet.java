@@ -9,10 +9,10 @@ public class Wallet {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long walletID;
+	private Long walletID;
 	
 	@Min(value=0, message = "Balance should be greater than 0")
-	private double balance;
+	private Double balance;
 	
 	@OneToMany(targetEntity = Transaction.class, cascade = CascadeType.ALL)
 	@JoinColumn(name="WalletID",referencedColumnName = "TransactionID")
@@ -23,7 +23,7 @@ public class Wallet {
 
 	}
 
-	public Wallet(long walletID, @Min(value = 0, message = "Balance should be greater than 0") double balance,
+	public Wallet(Long walletID, @Min(value = 0, message = "Balance should be greater than 0") Double balance,
 			List<Transaction> transactions) {
 		super();
 		this.walletID = walletID;
@@ -31,19 +31,19 @@ public class Wallet {
 		this.transactions = transactions;
 	}
 
-	public long getWalletID() {
+	public Long getWalletID() {
 		return walletID;
 	}
 
-	public void setWalletID(long walletID) {
+	public void setWalletID(Long walletID) {
 		this.walletID = walletID;
 	}
 
-	public double getBalance() {
+	public Double getBalance() {
 		return balance;
 	}
 
-	public void setBalance(double balance) {
+	public void setBalance(Double balance) {
 		this.balance = balance;
 	}
 
@@ -59,6 +59,8 @@ public class Wallet {
 	public String toString() {
 		return "Wallet [walletID=" + walletID + ", balance=" + balance + ", transactions=" + transactions + "]";
 	}
+
+	
 	
 	
 

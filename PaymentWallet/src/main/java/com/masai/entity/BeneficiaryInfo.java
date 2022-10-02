@@ -13,7 +13,7 @@ public class BeneficiaryInfo {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private int benificiaryID;
+	private Long benificiaryID;
 	
 	private String name;
 	
@@ -25,10 +25,10 @@ public class BeneficiaryInfo {
 
 	public BeneficiaryInfo() {
 		super();
-		// TODO Auto-generated constructor stub
+		
 	}
 
-	public BeneficiaryInfo(int benificiaryID, String name, String mobileNumber, Wallet wallet) {
+	public BeneficiaryInfo(Long benificiaryID, String name, String mobileNumber, Wallet wallet) {
 		super();
 		this.benificiaryID = benificiaryID;
 		this.name = name;
@@ -36,11 +36,11 @@ public class BeneficiaryInfo {
 		this.wallet = wallet;
 	}
 
-	public int getBenificiaryID() {
+	public Long getBenificiaryID() {
 		return benificiaryID;
 	}
 
-	public void setBenificiaryID(int benificiaryID) {
+	public void setBenificiaryID(Long benificiaryID) {
 		this.benificiaryID = benificiaryID;
 	}
 
@@ -73,6 +73,8 @@ public class BeneficiaryInfo {
 		return "BeneficiaryInfo [benificiaryID=" + benificiaryID + ", name=" + name + ", mobileNumber=" + mobileNumber
 				+ ", wallet=" + wallet + "]";
 	}
+
+	
 	
 	
 }

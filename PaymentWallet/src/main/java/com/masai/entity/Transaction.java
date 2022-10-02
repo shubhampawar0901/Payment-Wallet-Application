@@ -9,7 +9,7 @@ public class Transaction {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long transactionID;
+	private Long transactionID;
 	
 	@NotNull
 	private String transactionType;
@@ -18,7 +18,7 @@ public class Transaction {
 	private LocalDateTime localDateTime;
 	
 	@NotNull
-	private double amount;
+	private Double amount;
 	
 	private String description;
 
@@ -26,8 +26,8 @@ public class Transaction {
 		super();
 	}
 
-	public Transaction(long transactionID, @NotNull String transactionType, @NotNull LocalDateTime localDateTime,
-			@NotNull double amount, String description) {
+	public Transaction(Long transactionID, @NotNull String transactionType, @NotNull LocalDateTime localDateTime,
+			@NotNull Double amount, String description) {
 		super();
 		this.transactionID = transactionID;
 		this.transactionType = transactionType;
@@ -36,11 +36,11 @@ public class Transaction {
 		this.description = description;
 	}
 
-	public long getTransactionID() {
+	public Long getTransactionID() {
 		return transactionID;
 	}
 
-	public void setTransactionID(long transactionID) {
+	public void setTransactionID(Long transactionID) {
 		this.transactionID = transactionID;
 	}
 
@@ -60,11 +60,11 @@ public class Transaction {
 		this.localDateTime = localDateTime;
 	}
 
-	public double getAmount() {
+	public Double getAmount() {
 		return amount;
 	}
 
-	public void setAmount(double amount) {
+	public void setAmount(Double amount) {
 		this.amount = amount;
 	}
 
@@ -81,6 +81,8 @@ public class Transaction {
 		return "Transaction [transactionID=" + transactionID + ", transactionType=" + transactionType
 				+ ", localDateTime=" + localDateTime + ", amount=" + amount + ", description=" + description + "]";
 	}
+
+	
 	
 	
 	
