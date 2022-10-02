@@ -10,9 +10,9 @@ public class BillPayment {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
-	private long billId;
+	private Long billId;
 	@NotNull
-	private double amount;
+	private Double amount;
 	@NotNull
 	private String billType;
 	@NotNull
@@ -26,22 +26,30 @@ public class BillPayment {
 		super();
 	}
 
-	public BillPayment(long billId, @NotNull String billType, @NotNull double amount,
+	public BillPayment(Long billId, @NotNull Double amount, @NotNull String billType,
 			@NotNull LocalDateTime localDateTime, Wallet wallet) {
 		super();
 		this.billId = billId;
-		this.billType = billType;
 		this.amount = amount;
+		this.billType = billType;
 		this.localDateTime = localDateTime;
 		this.wallet = wallet;
 	}
 
-	public long getBillId() {
+	public Long getBillId() {
 		return billId;
 	}
 
-	public void setBillId(long billId) {
+	public void setBillId(Long billId) {
 		this.billId = billId;
+	}
+
+	public Double getAmount() {
+		return amount;
+	}
+
+	public void setAmount(Double amount) {
+		this.amount = amount;
 	}
 
 	public String getBillType() {
@@ -50,14 +58,6 @@ public class BillPayment {
 
 	public void setBillType(String billType) {
 		this.billType = billType;
-	}
-
-	public double getAmount() {
-		return amount;
-	}
-
-	public void setAmount(double amount) {
-		this.amount = amount;
 	}
 
 	public LocalDateTime getLocalDateTime() {
@@ -78,11 +78,9 @@ public class BillPayment {
 
 	@Override
 	public String toString() {
-		return "BillPayment [billId=" + billId + ", billType=" + billType + ", amount=" + amount + ", localDateTime="
+		return "BillPayment [billId=" + billId + ", amount=" + amount + ", billType=" + billType + ", localDateTime="
 				+ localDateTime + ", wallet=" + wallet + "]";
 	}
-	
-	
-	
+
 	
 }
