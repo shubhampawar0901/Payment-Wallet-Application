@@ -14,7 +14,7 @@ public class BankAccount {
 
 	@Id
 	@Size(min = 11, max = 16)
-	private Integer bankAccountNo ;
+	private Long bankAccountNo ;
 	
 	@NotNull
 	@Pattern(regexp ="[A-Z]{4}0[A-Z0-9]{6}$")
@@ -34,7 +34,7 @@ public class BankAccount {
 		super();
 	}
 
-	public BankAccount(@Size(min = 11, max = 16) Integer bankAccountNo,
+	public BankAccount(@Size(min = 11, max = 16) Long bankAccountNo,
 			@NotNull @Pattern(regexp = "[A-Z]{4}0[A-Z0-9]{6}$") String iFSCcode, @NotNull String bankName,
 			@NotNull @Min(0) Double bankBallance, Wallet wallet) {
 		super();
@@ -45,11 +45,11 @@ public class BankAccount {
 		this.wallet = wallet;
 	}
 
-	public Integer getBankAccountNo() {
+	public Long getBankAccountNo() {
 		return bankAccountNo;
 	}
 
-	public void setBankAccountNo(Integer bankAccountNo) {
+	public void setBankAccountNo(Long bankAccountNo) {
 		this.bankAccountNo = bankAccountNo;
 	}
 
@@ -90,6 +90,8 @@ public class BankAccount {
 		return "BankAccount [bankAccountNo=" + bankAccountNo + ", IFSCcode=" + IFSCcode + ", bankName=" + bankName
 				+ ", bankBallance=" + bankBallance + ", wallet=" + wallet + "]";
 	}
+
+	
 
 	
 	
